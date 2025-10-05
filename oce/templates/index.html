@@ -189,6 +189,43 @@
 </style>
 
 <div class="container-fluid">
+    <!-- Welcome Carousel Section -->
+  <div id="welcomeCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+    <div class="carousel-inner rounded-4 shadow">
+      <div class="carousel-item active">
+        <img src="{{ url_for('static', filename='images/humanfamily.png') }}" class="d-block w-100" alt="Children working together in a classroom">
+        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3">
+          <h3>Welcome to The Human Domino Effect</h3>
+          <p>Building stronger communities starts with understanding and cooperation.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{{ url_for('static', filename='images/community2.jpg') }}" class="d-block w-100" alt="Students building a model">
+        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3">
+          <h3>Learn Through Play</h3>
+          <p>Discover how every small effort adds up to big change.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{{ url_for('static', filename='images/humanfamily.png') }}" class="d-block w-100" alt="Group of smiling students">
+        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3">
+          <h3>Be Part of the Story</h3>
+          <p>Each of us has a role to play in shaping our human story.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#welcomeCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#welcomeCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
   <div class="row align-items-center my-10 py-2-5">
     <!--
       At large resolutions, the title, board, and character have equal column widths (col-4)
@@ -614,4 +651,48 @@
 
   </div>
 </div>
+<!-- Scroll-to-top button -->
+<button id="scrollTopBtn" class="btn btn-primary rounded-circle">
+  ↑
+</button>
+
+<style>
+  #scrollTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+    z-index: 1000;
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: opacity 0.3s ease;
+  }
+
+  #scrollTopBtn:hover {
+    background-color: #0d6efd;
+    color: white;
+  }
+</style>
+
+<script>
+  // Show button after scrolling down
+  window.addEventListener("scroll", function() {
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      scrollTopBtn.style.display = "block";
+    } else {
+      scrollTopBtn.style.display = "none";
+    }
+  });
+
+  // Smooth scroll to top
+  document.getElementById("scrollTopBtn").addEventListener("click", function() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
 {% endblock %}
