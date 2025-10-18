@@ -76,6 +76,47 @@ def block8():
 def block9():
   return render_template('block9.html')
 
+@content.route('/content/archingblock1')
+def archingblock1():
+    return render_template('archingblock1.html')
+
+@content.route('/content/archingblock2')
+def archingblock2():
+    return render_template('archingblock2.html')
+
+@content.route('/content/archingblock3')
+def archingblock3():
+    return render_template('archingblock3.html')
+
+@content.route('/content/archingblock4')
+def archingblock4():
+    return render_template('archingblock4.html')
+
+@content.route('/content/archingblock5')
+def archingblock5():
+    return render_template('archingblock5.html')
+
+@content.route('/content/archingblock6')
+def archingblock6():
+    return render_template('archingblock6.html')
+
+@content.route('/content/archingblock7')
+def archingblock7():
+    return render_template('archingblock7.html')
+
+@content.route('/content/archingblock8')
+def archingblock8():
+    return render_template('archingblock8.html')
+
+@content.route('/content/archingblock9')
+def archingblock9():
+    return render_template('archingblock9.html')
+
+@content.route('/content/keystoneblock')
+def keystoneblock():
+    return render_template('keystoneblock.html')
+
+
 @content.route('/content/tiles/')
 def tiles():
     return send_file('static/docs/Human-Domino-Effect-Footprint-Tiles.pdf', download_name='Human-Domino-Effect-Footprint-Tiles.pdf')
